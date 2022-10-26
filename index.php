@@ -55,7 +55,7 @@
                         </form>
                         <div id="info" style="background: rgba(0,0,0,0.6);color: white;padding: 10px;
     width: 280px;
-    height: 50px;
+    height: 100px;
     border-radius: 12px;" ></div>
                     </div>   
                 </td>
