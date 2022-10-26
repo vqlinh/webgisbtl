@@ -121,3 +121,11 @@ body{
   .header-right.col-6{
       width: 100% !important;
   }
+  #info{
+    background: rgba(0,0,0,0.6);
+    color: wheat;
+    padding: 10px;
+    width: 280px;
+    height: 50px;
+    border-radius: 12px;
+  }

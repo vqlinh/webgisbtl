@@ -53,7 +53,10 @@
                             <input type="checkbox" name="showPoint" id="showPoint"> Hiện thị các bưu điện
                             <br>
                         </form>
-                        <div id="info"></div>
+                        <div id="info" style="background: rgba(0,0,0,0.6);color: white;padding: 10px;
+    width: 280px;
+    height: 50px;
+    border-radius: 12px;" ></div>
                     </div>   
                 </td>
             </tr>

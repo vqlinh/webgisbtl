@@ -141,8 +141,8 @@
             $resFin = '<table>';
             // kết quả
         
-            $resFin = $resFin.'<tr><td>Tên bãi đỗ xe : '.$result[0]['name'].'</td></tr>';
-            $resFin = $resFin.'<tr><td>Địa chỉ : '.$result[0]['addr_subdi'].'</td></tr>';
+            $resFin = $resFin.'<tr><td>Tên Bưu Điện : '.$result[0]['name'].'</td></tr>';
+            $resFin = $resFin.'<tr><td>Địa Chỉ : '.$result[0]['addr_subdi'].'</td></tr>';
 
             $resFin = $resFin.'</table>';
     
@@ -158,7 +158,7 @@
         $paPDO = initDB();
             $mySQLStr = "SELECT  pointpo.name ,  pointpo.addr_stree
                 from  \"pointpo\" 
-                where pointpo.name,pointpo.addr_stree like '%$search%'";
+                where  pointpo.name ILIKE '%$search%' or pointpo.addr_stree   ILIKE '%$search%'";
             //echo $mySQLStr;
             //echo "<br><br>";
             $result = query($paPDO, $mySQLStr);
@@ -166,7 +166,8 @@
         if ($result != null)
         {   
             $resFin = '
-            <table class="table">
+            <table class="table" >
+            
   <thead>
     <tr>
       <th scope="col">Tên Bưu Điện</th>
@@ -174,6 +175,16 @@
     </tr>
   </thead>
   <tbody>'; 
+//   style="border: solid 1px black;
+//             position: absolute;
+//             top: 50;
+//             background: rgba(0.0.0.0.6);
+//             background: black;
+//             opacity: 0.6;
+//             color: white;
+//             width: 200px;
+//             right: 100px;
+//             top: 300px;!important"
             
              foreach ($result as $value){
                  $resFin = $resFin.'<tr>
