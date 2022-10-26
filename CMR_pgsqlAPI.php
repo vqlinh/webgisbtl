@@ -118,6 +118,9 @@
             echo "<br>";
         }
     }
+  
+    
+
     function getInfoCMRToAjax($paPDO,$paSRID,$paPoint)
     {
         //echo $paPoint;
@@ -153,9 +156,9 @@
         //echo $paPoint;
         //echo "<br>";
         $paPDO = initDB();
-            $mySQLStr = "SELECT  pointpo.name ,  pointpo.addr_subdi
+            $mySQLStr = "SELECT  pointpo.name ,  pointpo.addr_stree
                 from  \"pointpo\" 
-                where pointpo.name like '%$search%'";
+                where pointpo.name,pointpo.addr_stree like '%$search%'";
             //echo $mySQLStr;
             //echo "<br><br>";
             $result = query($paPDO, $mySQLStr);
@@ -166,7 +169,7 @@
             <table class="table">
   <thead>
     <tr>
-      <th scope="col">Tên Bãi Gửi xe</th>
+      <th scope="col">Tên Bưu Điện</th>
       <th scope="col">Địa Chỉ</th>
     </tr>
   </thead>
@@ -175,7 +178,7 @@
              foreach ($result as $value){
                  $resFin = $resFin.'<tr>
                  <td>'.$value['name'].'</td>';
-                 $resFin = $resFin.'<td>'.$value['addr_subdi'].'</td>
+                 $resFin = $resFin.'<td>'.$value['addr_stree'].'</td>
                  </tr>';
             //     $resFin = $resFin.'<br>'; 
              }
@@ -187,12 +190,13 @@
         else
             return "error";
     }
+   
     function getShowAll($search)
     {
         //echo $paPoint;
         //echo "<br>";
         $paPDO = initDB();
-            $mySQLStr = "SELECT  pointpo.name ,  pointpo.addr_subdi
+            $mySQLStr = "SELECT  pointpo.name ,  pointpo.addr_stree
                 from  \"pointpo\" ";
             //echo $mySQLStr;
             //echo "<br><br>";
@@ -204,7 +208,7 @@
             <table class="table">
   <thead>
     <tr>
-      <th scope="col">Tên Bãi Gửi xe</th>
+      <th scope="col">Tên Bưu Điện</th>
       <th scope="col">Địa Chỉ</th>
     </tr>
   </thead>
@@ -213,7 +217,7 @@
              foreach ($result as $value){
                  $resFin = $resFin.'<tr>
                  <td>'.$value['name'].'</td>';
-                 $resFin = $resFin.'<td>'.$value['addr_subdi'].'</td>
+                 $resFin = $resFin.'<td>'.$value['addr_stree'].'</td>
                  </tr>';
             //     $resFin = $resFin.'<br>'; 
              }
