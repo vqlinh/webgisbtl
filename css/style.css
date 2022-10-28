@@ -1,0 +1,35 @@
+
+.search-box{
+    height: 50px;
+    width: 200px;
+    overflow: hidden;
+    background: #000;
+    position: relative;
+    border-radius: 15px;
+    transition: all 0.5s linear;
+}
+.search-box-input{
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    color:pink;
+    padding: 10px 100px 10px 20px;
+    font-size: 25px;
+    font-weight: 600;
+    outline: none;
+    border: none;
+}
+.search-box-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 50px;
+    width: 50px;
+    font-size: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.search-box.open{
+    width: 500px;
+}

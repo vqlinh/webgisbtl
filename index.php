@@ -1,7 +1,4 @@
-<!-- <?php
-// include('./config/constants.php');
-// include('./config/checklogin.php');
-?> -->
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,17 +14,14 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js" integrity="sha384-PsUw7Xwds7x08Ew3exXhqzbhuEYmA2xnwc8BuD6SEr+UmEHlX8/MCltYEodzWA4u" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
     </head>
     <body onload="initialize_map();">
     <div class="header-right col-6 text-end header-meta">
-        <div class="login">
-            <a href="logout.php">Đăng xuất</a>
-        </div>
-        <!-- <div class="admin">
-            <span>
-                <?= $_SESSION['user'] ?>
-            </span>
-        </div> -->
+        
+        
     </div>
         <table>
             <tr>
@@ -41,7 +35,14 @@
                         <div>
                             <span>Search</span>
                             <form method="POST">
-                                <input type="text" name="search">
+                                <!-- <input type="text" name="search" class="input-search"   > -->
+                                <div class="search-box">
+                                    <input class="search-box-input" name="search" type="text">
+                                    <button class="search-box-btn" >
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                </div>
+                                                                                                                
                                 <input type="submit" name="submit" value="Tìm" >  
                                 <input type="submit" name="submitAll" value="Hiển thị tất cả" >    
                             </form>
@@ -54,9 +55,9 @@
                             <br>
                         </form>
                         <div id="info" style="background: rgba(0,0,0,0.6);color: white;padding: 10px;
-    width: 280px;
-    height: 100px;
-    border-radius: 12px;" ></div>
+                                width: 280px;
+                                height: 100px;
+                                border-radius: 12px;" ></div>
                     </div>   
                 </td>
             </tr>
@@ -236,5 +237,6 @@
             };
         //});
         </script>
+        <!-- <script src="jsindex/main.js"></script> -->
     </body>
 </html>

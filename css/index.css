@@ -21,6 +21,7 @@
 }
 .map {
     border: 1px solid #000;
+    
 }
 h1{
     text-align: center;
@@ -36,6 +37,7 @@ h1{
 }
 body{
     background-color:wheat;
+   
 }
 .header {
     border-bottom: 1px solid #b2b2b2;
@@ -62,6 +64,7 @@ body{
     padding: 1px 1px 1px 35px;
     border-radius: 3px;
     outline: none;
+    
   }
   .header-search i {
     position: absolute;
@@ -121,11 +124,14 @@ body{
   .header-right.col-6{
       width: 100% !important;
   }
-  #info{
-    background: rgba(0,0,0,0.6);
-    color: wheat;
-    padding: 10px;
-    width: 280px;
-    height: 50px;
-    border-radius: 12px;
+  
+
+  /* searchhhhhhhhh */
+  .input-search{
+    border-radius: 15px;
+    
   }
+  
+  
+
+ 
