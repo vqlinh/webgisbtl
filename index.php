@@ -15,6 +15,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="css/index.css">
         <link rel="stylesheet" href="css/style.css">
+        <!-- <link rel="stylesheet" href="css/style.css"> -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 
     </head>
@@ -33,18 +34,27 @@
                 <td class="infomation">
                     <div>
                         <div>
-                            <span>Search</span>
+                            <!-- <span>Tìm Kiếm Bưu Điện</span> -->
                             <form method="POST">
                                 <!-- <input type="text" name="search" class="input-search"   > -->
                                 <div class="search-box">
-                                    <input class="search-box-input" name="search" type="text">
-                                    <button class="search-box-btn" >
+                                    <div class="form-field">
+                                        <input class="search-box-input" name="search" type="text" placeholder=" " >
+                                        <label class="form-label" for="name">Tìm Kiếm</label>
+                                    </div>
+                                    
+                                    <button class="search-box-btn" type="submit" name="submit">
                                         <i class="fa-solid fa-magnifying-glass"></i>
                                     </button>
+                                    <span class="btnspan">tìm kiếm</span>
+                                   
                                 </div>
                                                                                                                 
-                                <input type="submit" name="submit" value="Tìm" >  
-                                <input type="submit" name="submitAll" value="Hiển thị tất cả" >    
+                                <!-- <input type="submit" name="submit" value="Tìm" >   -->
+                                <div class="btnshowall">
+                                    <input type="submit" name="submitAll" value="Hiển thị tất cả" >  
+                                </div>
+                              
                             </form>
                         </div>
                         <br>
@@ -121,6 +131,12 @@
                         }
                     })
                 });
+                // var mousePosition= new ol.control.MousePosition({
+                //     projection:'EPSG:4326',
+                //     coordinateFormat:function(coordiante){return ol.coordinate.format(coordinate,'{y},{x}' ,6);}
+                    
+                // });
+                // map.addControl(mousePosition);
 
                 var viewMap = new ol.View({
                     center: ol.proj.fromLonLat([mapLng, mapLat]),

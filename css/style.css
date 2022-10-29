@@ -1,35 +1,94 @@
 
 .search-box{
-    height: 50px;
-    width: 200px;
-    overflow: hidden;
-    background: #000;
+    height: 40px;
+    width: 250px;
+   
+    /* background: rgba(245,245,245); */
     position: relative;
     border-radius: 15px;
-    transition: all 0.5s linear;
+    /* transition: all 0.5s linear; */
+   
 }
 .search-box-input{
     height: 100%;
     width: 100%;
-    background: transparent;
-    color:pink;
-    padding: 10px 100px 10px 20px;
-    font-size: 25px;
-    font-weight: 600;
+    background: rgba(245,245,245);
+    color:rgba(0, 0, 0, 0.8);
+    padding: 10px 50px 10px 20px;
+    font-size: 20px;
+    font-weight: 400;
     outline: none;
     border: none;
+    border-radius: 15px;   
+   
 }
+.form-field{
+    position: relative;
+}
+.form-label{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 21px;
+    user-select: none;
+    color: #999;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+.search-box-input:not(:placeholder-shown) +.form-label,
+
+.search-box-input:focus +.form-label{
+    top: 0;
+    padding: 0 10px 0 10px;
+    background: rgba(245,245,245);
+
+   
+}
+
 .search-box-btn{
     position: absolute;
     top: 0;
     right: 0;
-    height: 50px;
-    width: 50px;
-    font-size: 25px;
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
     border: none;
     outline: none;
     cursor: pointer;
+    border-radius: 0 15px 15px 0 ;
+    
 }
-.search-box.open{
+/* .btnsearch:hover{
+    display: block;
+} */
+/* .search-box.open{
     width: 500px;
+} */
+
+.btnshowall{
+    width: 150px;
 }
+.btnshowall input{
+    height: 40px;
+    width: 100%;
+    background: rgba(245,245,245);
+    color:rgba(0, 0, 0, 0.8);
+    outline: none;
+    border: none;
+    border-radius: 12px;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 400;
+}
+.btnspan{
+    position: absolute;
+    top: 50px;
+    right: -15px;
+    color: white;
+    background: #000;
+    padding: 5px 10px 5px 10px;
+    border-radius: 15px;
+    display: none;
+}
+
+
