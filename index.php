@@ -13,63 +13,82 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js" integrity="sha384-PsUw7Xwds7x08Ew3exXhqzbhuEYmA2xnwc8BuD6SEr+UmEHlX8/MCltYEodzWA4u" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/index.css">
+        <!-- <link rel="stylesheet" href="css/index.css"> -->
         <link rel="stylesheet" href="css/style.css">
-        <!-- <link rel="stylesheet" href="css/style.css"> -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 
     </head>
     <body onload="initialize_map();">
-    <div class="header-right col-6 text-end header-meta">
+    <!-- <div class="header-right col-6 text-end header-meta">
         
         
-    </div>
+    </div> -->
         <table>
             <tr>
                 <td>
-                    <h1>BẢN ĐỒ BƯU ĐIỆN</h1>
-                    <div id="map" class="map"></div>
-                    <!-- <div id="map" style="width: 80vw; height: 100vh;"></div> -->
-                </td>
-                <td class="infomation">
-                    <div>
-                        <div>
-                            <!-- <span>Tìm Kiếm Bưu Điện</span> -->
-                            <form method="POST">
-                                <!-- <input type="text" name="search" class="input-search"   > -->
-                                <div class="search-box">
-                                    <div class="form-field">
-                                        <input class="search-box-input" name="search" type="text" placeholder=" " >
-                                        <label class="form-label" for="name">Tìm Kiếm</label>
-                                    </div>
-                                    
-                                    <button class="search-box-btn" type="submit" name="submit">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                    </button>
-                                    <span class="btnspan">tìm kiếm</span>
-                                   
+                    
+                    <div id="map" class="map">
+                                <h1 class="map-title">BẢN ĐỒ BƯU ĐIỆN</h1>
+                                            <form method="POST">
+                                                <!-- <input type="text" name="search" class="input-search"   > -->
+                                                <div class="search-box">
+                                                    <div class="form-field">
+                                                        <input class="search-box-input" name="search" type="text" placeholder=" " >
+                                                        <label class="form-label" for="name">Tìm Kiếm</label>
+                                                     <button class="search-box-btn" type="submit" name="submit">    
+                                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                                     </button>
+                                                     <!-- <span class="btnspan">tìm kiếm</span> -->
+
+                                                    </div>                                                                                                                                
+                                                    <!-- <input type="submit" name="submit" value="Tìm" >   -->
+                                                    <div class="btnshowall">
+                                                        <input type="submit" name="submitAll" value="Hiển thị tất cả" >  
+                                                    </div>
+                                                </div>
+                                            
+                                            </form>
+                                            <div class="information">
+                                            <form method="POST">
+                                                <input type="checkbox" name="showLine" id="showLine" > Hiện thị khu vực Hà Nội Việt Nam
+                                                <br>
+                                                <input type="checkbox" name="showPoint" id="showPoint"> Hiện thị các bưu điện
+                                                <br>
+                                                <div id="info"> </div>
+                                            </form>
+                                           
+
+                                            </div>
+
+                                            
+                                                
+                                
+                                  
+                        <!-- <td class="infomation">
+                            <div>
+                                <div>
+                                    <span>Tìm Kiếm Bưu Điện</span>
+ 
                                 </div>
-                                                                                                                
-                                <!-- <input type="submit" name="submit" value="Tìm" >   -->
-                                <div class="btnshowall">
-                                    <input type="submit" name="submitAll" value="Hiển thị tất cả" >  
-                                </div>
-                              
-                            </form>
-                        </div>
-                        <br>
-                        <form method="POST">
-                            <input type="checkbox" name="showLine" id="showLine" > Hiện thị khu vực Hà Nội Việt Nam
-                            <br>
-                            <input type="checkbox" name="showPoint" id="showPoint"> Hiện thị các bưu điện
-                            <br>
-                        </form>
-                        <div id="info" style="background: rgba(0,0,0,0.6);color: white;padding: 10px;
-                                width: 280px;
-                                height: 100px;
-                                border-radius: 12px;" ></div>
-                    </div>   
+                                <br>
+                                <form method="POST">
+                                    <input type="checkbox" name="showLine" id="showLine" > Hiện thị khu vực Hà Nội Việt Nam
+                                    <br>
+                                    <input type="checkbox" name="showPoint" id="showPoint"> Hiện thị các bưu điện
+                                    <br>
+                                </form>
+                                <div id="info" 
+                                
+                                  </div>
+                                  style="background: rgba(0,0,0,0.6);color: white;padding: 10px;
+                                        width: 280px;
+                                        height: 100px;
+                                        border-radius: 12px;" >
+                            </div>   
+                        </td -->
+                    </div>
                 </td>
+
             </tr>
         </table>
         <?php include 'CMR_pgsqlAPI.php' ?>
@@ -131,12 +150,8 @@
                         }
                     })
                 });
-                // var mousePosition= new ol.control.MousePosition({
-                //     projection:'EPSG:4326',
-                //     coordinateFormat:function(coordiante){return ol.coordinate.format(coordinate,'{y},{x}' ,6);}
-                    
-                // });
-                // map.addControl(mousePosition);
+
+                
 
                 var viewMap = new ol.View({
                     center: ol.proj.fromLonLat([mapLng, mapLat]),
@@ -149,7 +164,15 @@
                     //layers: [layerCMR_adm1],
                     view: viewMap
                 });
-                
+
+                // mousePosition
+                var mousePosition= new ol.control.MousePosition({
+                    class:'mousePosition',
+                    projection:'EPSG:4326',
+                    coordinateFormat: function(coordinate){return ol.coordinate.format(coordinate,'{y},{x}' ,6);}       
+                });
+                map.addControl(mousePosition);
+
                 var styles = {
                     'MultiPolygon': new ol.style.Style({
                         fill: new ol.style.Fill({
