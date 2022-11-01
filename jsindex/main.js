@@ -1,7 +1,7 @@
-var btnOpen= document.querySelector('.search-box-btn')
+// const checkbox = document.querySelector(".showLine");
+// const info = document.querySelector(".info ");
+// checkbox.addEventListener("click", () => {
+//   info.classList.add("hide");
+// });
 
 
-btnOpen.addEventListener('click',function(){
-    this.parentElement.classList.toggle('open')
-    this.previousElementSibling.focus()
-})

@@ -16,6 +16,7 @@
         <!-- <link rel="stylesheet" href="css/index.css"> -->
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"> -->
 
     </head>
     <body onload="initialize_map();">
@@ -23,11 +24,18 @@
         
         
     </div> -->
+    
+
         <table>
             <tr>
                 <td>
                     
+               
+
+
                     <div id="map" class="map">
+
+
                                 <h1 class="map-title">BẢN ĐỒ BƯU ĐIỆN</h1>
                                             <form method="POST">
                                                 <!-- <input type="text" name="search" class="input-search"   > -->
@@ -43,54 +51,31 @@
                                                     </div>                                                                                                                                
                                                     <!-- <input type="submit" name="submit" value="Tìm" >   -->
                                                     <div class="btnshowall">
-                                                        <input type="submit" name="submitAll" value="Hiển thị tất cả" >  
+                                                        <input type="submit" name="submitAll" value="Hiển thị tất cả"  >  
                                                     </div>
                                                 </div>
                                             
                                             </form>
                                             <div class="information">
                                             <form method="POST">
-                                                <input type="checkbox" name="showLine" id="showLine" > Hiện thị khu vực Hà Nội Việt Nam
+                                                <input type="checkbox" name="showLine"  id="showLine" > Hiện thị khu vực Hà Nội Việt Nam
                                                 <br>
-                                                <input type="checkbox" name="showPoint" id="showPoint"> Hiện thị các bưu điện
+                                                <input type="checkbox" name="showPoint"class="showLine" id="showPoint"> Hiện thị các bưu điện
                                                 <br>
-                                                <div id="info"> </div>
+                                                <div id="info" class="info"> </div>
+
+                                                
                                             </form>
                                            
 
-                                            </div>
-
-                                            
-                                                
-                                
-                                  
-                        <!-- <td class="infomation">
-                            <div>
-                                <div>
-                                    <span>Tìm Kiếm Bưu Điện</span>
- 
-                                </div>
-                                <br>
-                                <form method="POST">
-                                    <input type="checkbox" name="showLine" id="showLine" > Hiện thị khu vực Hà Nội Việt Nam
-                                    <br>
-                                    <input type="checkbox" name="showPoint" id="showPoint"> Hiện thị các bưu điện
-                                    <br>
-                                </form>
-                                <div id="info" 
-                                
-                                  </div>
-                                  style="background: rgba(0,0,0,0.6);color: white;padding: 10px;
-                                        width: 280px;
-                                        height: 100px;
-                                        border-radius: 12px;" >
-                            </div>   
-                        </td -->
+                                            </div> 
                     </div>
                 </td>
 
             </tr>
         </table>
+
+
         <?php include 'CMR_pgsqlAPI.php' ?>
         <?php
         if (isset($_POST['submit'])){
@@ -103,7 +88,9 @@
             getSearch("");
         }
         ?>
-        <script>
+
+
+        <script>  
         //$("#document").ready(function () {
             var format = 'image/png';
             var map;
@@ -172,6 +159,13 @@
                     coordinateFormat: function(coordinate){return ol.coordinate.format(coordinate,'{y},{x}' ,6);}       
                 });
                 map.addControl(mousePosition);
+                // scale 
+                var scaleControl = new ol.control.ScaleLine({
+                    bar:true,
+                    text:true 
+
+                });
+                map.addControl(scaleControl);
 
                 var styles = {
                     'MultiPolygon': new ol.style.Style({
@@ -217,10 +211,12 @@
                     });
                     map.addLayer(vectorLayer);
                 }
+                const model = document.querySelector(".info")
+
                 function displayObjInfo(result, coordinate)
                 {
-                    //alert("result: " + result);
-                    //alert("coordinate des: " + coordinate);
+                    model.style.display = "block";
+                
 					$("#info").html(result);
                 }
                 map.on('click', function (evt) {
@@ -276,6 +272,7 @@
             };
         //});
         </script>
-        <!-- <script src="jsindex/main.js"></script> -->
+        <script src="jsindex/main.js"></script>
+
     </body>
 </html>

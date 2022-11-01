@@ -129,7 +129,7 @@
         //echo $paPoint;
         //echo "<br>";
         //$mySQLStr = "SELECT ST_AsGeoJson(geom) as geo from \"CMR_adm1\" where ST_Within('SRID=4326;POINT(12 5)'::geometry,geom)";
-        $mySQLStr = "SELECT  pointpo.name ,  pointpo.addr_subdi
+        $mySQLStr = "SELECT  pointpo.name ,  pointpo.addr_stree
         from  \"pointpo\" 
         where ST_Distance('SRID=4326;$paPoint', pointpo.geom) <= all(select ST_Distance('SRID=4326;$paPoint', pointpo.geom) from \"pointpo\") 
         and ST_Distance('SRID=4326;$paPoint', pointpo.geom) < 0.00025";
@@ -142,7 +142,7 @@
             // kết quả
         
             $resFin = $resFin.'<tr><td>Tên Bưu Điện : '.$result[0]['name'].'</td></tr>';
-            $resFin = $resFin.'<tr><td>Địa Chỉ : '.$result[0]['addr_subdi'].'</td></tr>';
+            $resFin = $resFin.'<tr><td>Địa Chỉ : '.$result[0]['addr_stree'].'</td></tr>';
 
             $resFin = $resFin.'</table>';
     
@@ -165,7 +165,24 @@
             
         if ($result != null)
         {   
+ 
             $resFin = '
+ 
+            <div class="navbar_overlay "></div>
+
+            <div class="navbar_select-option ">
+
+            <script>
+             const overlay = document.querySelector(".navbar_overlay");
+             const model = document.querySelector(".navbar_select-option ");
+             
+             overlay.addEventListener("click", () => {
+                  model.style.display = "none";
+               });
+
+             
+             </script>
+             
             <table class="table" >
             
   <thead>
@@ -194,7 +211,11 @@
             //     $resFin = $resFin.'<br>'; 
              }
              $resFin = $resFin.'</tbody>
-             </table>'; 
+             </table>
+             </div>
+        
+             
+             '; 
             
              echo $resFin;
         }
@@ -213,9 +234,20 @@
             //echo "<br><br>";
             $result = query($paPDO, $mySQLStr);
             
+
+          
+            
         if ($result != null)
         {   
             $resFin = '
+
+            
+
+         
+
+            <div class="navbar_select-option ">
+
+
             <table class="table">
   <thead>
     <tr>
@@ -233,12 +265,31 @@
             //     $resFin = $resFin.'<br>'; 
              }
              $resFin = $resFin.'</tbody>
-             </table>'; 
+             </table>
+
+             </div>
+
+
+             
+             '
+             ; 
             
              echo $resFin;
         }
+
+
         else
             return "error";
     }
     
 ?>
+
+
+
+
+
+
+
+
+
+
