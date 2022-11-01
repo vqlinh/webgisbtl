@@ -63,7 +63,6 @@
                                                 <input type="checkbox" name="showPoint"class="showLine" id="showPoint"> Hiện thị các bưu điện
                                                 <br>
                                                 <div id="info" class="info"> </div>
-
                                                 
                                             </form>
                                            
@@ -78,7 +77,7 @@
 
         <?php include 'CMR_pgsqlAPI.php' ?>
         <?php
-        if (isset($_POST['submit'])){
+        if (isset($_POST['submit'])){   
             $search = $_POST['search'];
             if ($search !=""){
                 getSearch($search);
@@ -216,7 +215,7 @@
                 function displayObjInfo(result, coordinate)
                 {
                     model.style.display = "block";
-                
+        
 					$("#info").html(result);
                 }
                 map.on('click', function (evt) {
@@ -237,17 +236,6 @@
                         success : function (result, status, erro) {
                             displayObjInfo(result, evt.coordinate );
                             
-                            //   var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
-                            //     keyboard: true
-                            //     })
-                            //     // console.log(result);
-                            //     if(result!='')
-                            //     {
-                            //         myModal.show();
-                            //         $('#info').html(result);
-                            //     }
-                                
-                          //  console.log(1);
                         },
                         error: function (req, status, error) {
                             console.log(req + " " + status + " " + error);

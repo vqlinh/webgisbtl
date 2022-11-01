@@ -138,13 +138,17 @@
         $result = query($paPDO, $mySQLStr);
         if ($result != null)
         {
-            $resFin = '<table>';
+            $resFin = '
+            <div class="buudien">
+            <table >
+            ';
             // kết quả
         
             $resFin = $resFin.'<tr><td>Tên Bưu Điện : '.$result[0]['name'].'</td></tr>';
             $resFin = $resFin.'<tr><td>Địa Chỉ : '.$result[0]['addr_stree'].'</td></tr>';
 
-            $resFin = $resFin.'</table>';
+            $resFin = $resFin.'</table>
+            </div>';
     
             echo $resFin;
         }
@@ -178,6 +182,7 @@
              
              overlay.addEventListener("click", () => {
                   model.style.display = "none";
+                  overlay.style.display = "none";
                });
 
              
@@ -192,16 +197,7 @@
     </tr>
   </thead>
   <tbody>'; 
-//   style="border: solid 1px black;
-//             position: absolute;
-//             top: 50;
-//             background: rgba(0.0.0.0.6);
-//             background: black;
-//             opacity: 0.6;
-//             color: white;
-//             width: 200px;
-//             right: 100px;
-//             top: 300px;!important"
+
             
              foreach ($result as $value){
                  $resFin = $resFin.'<tr>

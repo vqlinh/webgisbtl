@@ -55,6 +55,7 @@
   pointer-events: none;
   transition: 0.3s ease;
   right: 0;
+  width: 100px;
 }
 .search-box-input:not(:placeholder-shown) + .form-label,
 .search-box-input:focus + .form-label {
@@ -62,6 +63,7 @@
   padding: 0 10px 0 10px;
   background: rgba(245, 245, 245);
   border-radius: 10px;
+  width: 100px;
 }
 
 .search-box-btn {
@@ -137,7 +139,7 @@ h1 {
 a {
   text-decoration: none !important;
 }
-.info {
+/* .info {
   background: rgba(0, 0, 0, 0.7);
   color: rgba(245, 245, 245);
   width: 240px;
@@ -149,7 +151,7 @@ a {
   display: none;
   /* margin: 500px 30px 30px 1000px; */
   padding: 20px;
-}
+} */
 .fa-xmark {
   position: fixed;
   font-size: 25px;
@@ -173,6 +175,7 @@ a {
   z-index: 900;
   display: block;
 }
+
 .add_navbar-option {
   position: relative;
 }
@@ -204,4 +207,21 @@ a {
 
 .table tbody {
   color: white;
+}
+.buudien{
+  display: flex;
+  background: rgba(0, 0, 0, 0.7);
+  color: rgba(245, 245, 245);
+  width: 280px;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  margin: 24px;
+}
+
+.buudien table {
+  width: 250px;
+  padding: 10px;
+  font-size: 16dp;
 }
